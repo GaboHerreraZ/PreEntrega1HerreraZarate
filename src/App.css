@@ -1,1 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap");
+
+body {
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5% /*1 rem = 10 px*/;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: "Sedgwick Ave", cursive;
+  font-size: 2rem;
+}

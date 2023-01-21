@@ -1,5 +1,12 @@
 .itemListContainer {
-  margin-top: 20px;
-  padding: 0 12px;
-  margin-left: 108px;
+  margin: 3rem 3rem;
+  display: grid;
+  gap: 2rem;
+  text-align: center;
+}
+
+.item-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
 }

@@ -1,41 +1,46 @@
+import { Menubar } from "../../shared/primereact";
+import { useNavigate } from "react-router-dom";
 import "./NavbarContainer.css";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import { FaShoppingCart } from "react-icons/fa";
 
 const NavbarContainer = () => {
+  const navigate = useNavigate();
+
+  const items = [
+    {
+      label: "Productos",
+      items: [
+        {
+          label: "Camisetas",
+          command: () => {
+            navigate("/category/camisetas");
+          },
+        },
+        {
+          label: "Gorras",
+          command: () => {
+            navigate("/category/gorras");
+          },
+        },
+      ],
+    },
+  ];
+
+  const start = <h1 className="title">Strongest</h1>;
+  const end = (
+    <i
+      onClick={() => navigate("/cart")}
+      className="pi pi-shopping-cart cart-icon"
+      style={{ fontSize: "3rem" }}
+    ></i>
+  );
+
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-      <Container>
-        <Navbar.Brand href="#home">
-          <h3>The Strongest</h3>
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-            <NavDropdown title="Hombres" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Gorras</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Camisetas</NavDropdown.Item>
-            </NavDropdown>
-            <NavDropdown title="Mujeres" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Gorras</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Camisetas</NavDropdown.Item>
-            </NavDropdown>
-            <NavDropdown title="Niños" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Gorras</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">Camisetas</NavDropdown.Item>
-            </NavDropdown>
-          </Nav>
-          <Nav>
-            <Nav.Link eventKey={2}>
-              <FaShoppingCart />
-            </Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+    <Menubar
+      start={start}
+      model={items}
+      end={end}
+      style={{ fontSize: "1rem" }}
+    />
   );
 };
 

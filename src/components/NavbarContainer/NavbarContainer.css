@@ -1,5 +1,20 @@
-@import url("https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap");
+div.p-menubar {
+  padding: 1rem;
+  border-radius: 0;
+  gap: 20px;
+}
 
-.h3 {
-  font-family: "Sedgwick Ave Display", cursive;
+.p-menuitem {
+  font-size: 2rem;
+  font-family: "Sedgwick Ave", cursive;
+}
+
+.title {
+  font-family: "Frijole", cursive;
+  color: black;
+}
+
+.cart-icon {
+  cursor: pointer;
+  margin-right: 2rem;
 }
