@@ -2,3 +2,31 @@
   padding: 1rem;
   margin: 2rem;
 }
+
+.container,
+.purchase-detail {
+  text-align: center;
+}
+
+.img {
+  width: 15rem;
+}
+
+.item-container {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1rem;
+  justify-content: space-between;
+  width: 50%;
+  margin: auto;
+}
+
+.item-container h1 {
+  display: flex;
+  align-items: center;
+}
+
+.item-container-detail {
+  display: grid;
+  align-content: center;
+}

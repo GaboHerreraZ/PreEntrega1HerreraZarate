@@ -1,0 +1,22 @@
+.required {
+  color: #bf1650;
+  margin: 0;
+}
+
+.required::before {
+  display: inline;
+  content: "⚠ ";
+}
+
+.form-container {
+  display: grid;
+  gap: 1rem;
+}
+
+.form-container input {
+  width: 100%;
+}
+
+label {
+  font-size: 1.5rem;
+}

@@ -18,3 +18,14 @@ div.p-menubar {
   cursor: pointer;
   margin-right: 2rem;
 }
+
+.badge-container {
+  display: inline-block;
+  width: 100px;
+}
+
+.p-badge {
+  position: relative;
+  bottom: 20px;
+  left: 35px;
+}

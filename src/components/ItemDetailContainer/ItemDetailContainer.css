@@ -18,3 +18,7 @@
   display: grid;
   justify-content: center;
 }
+
+.btn-addCart {
+  margin-top: 20px;
+}

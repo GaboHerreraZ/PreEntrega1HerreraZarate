@@ -1,9 +1,21 @@
-import { Menubar } from "../../shared/primereact";
+import { Menubar, Badge } from "../../shared/libraries/primereact";
 import { useNavigate } from "react-router-dom";
 import "./NavbarContainer.css";
+import { useEffect, useState } from "react";
+import { useCartContext } from "../../context/CartContext";
 
 const NavbarContainer = () => {
   const navigate = useNavigate();
+  const { cartList } = useCartContext();
+  const [total, setTotal] = useState(0);
+
+  useEffect(() => {
+    const count = cartList.reduce((prev, curr) => {
+      return prev + curr.quantity;
+    }, 0);
+
+    setTotal(count);
+  }, [cartList]);
 
   const items = [
     {
@@ -12,7 +24,7 @@ const NavbarContainer = () => {
         {
           label: "Camisetas",
           command: () => {
-            navigate("/category/camisetas");
+            navigate("/category/camiseta");
           },
         },
         {
@@ -27,11 +39,14 @@ const NavbarContainer = () => {
 
   const start = <h1 className="title">Strongest</h1>;
   const end = (
-    <i
-      onClick={() => navigate("/cart")}
-      className="pi pi-shopping-cart cart-icon"
-      style={{ fontSize: "3rem" }}
-    ></i>
+    <span className="badge-container">
+      <Badge value={total} size="large"></Badge>
+      <i
+        onClick={() => navigate("/cart")}
+        className="pi pi-shopping-cart cart-icon"
+        style={{ fontSize: "3rem" }}
+      ></i>
+    </span>
   );
 
   return (
